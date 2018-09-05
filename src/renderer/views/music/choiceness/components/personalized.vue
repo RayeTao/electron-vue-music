@@ -1,11 +1,12 @@
 <template>
     <div class="personalized">
-        <div class="title">为你推荐歌单</div>
-        <div class="class-list mt-5">
+        <div class="title">推荐歌单</div>
+        <div style="border-bottom: 1px solid #E6E7EA;margin-top: 10px"></div>
+       <!-- <div class="class-list mt-5">
             <div class="class-item hover-bg" v-for="item in class_list" :key="item">{{item}}</div>
-        </div>
+        </div>-->
         <el-row :gutter="15" class="mt-10">
-            <el-col :span="20" v-for="(item,index) in personalized" :key="index">
+            <el-col :span="20" v-for="(item,index) in personalized" :key="index" >
                 <personalized-item :item="item"  />
             </el-col>
         </el-row>

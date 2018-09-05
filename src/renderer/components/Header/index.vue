@@ -15,9 +15,12 @@
                 <el-input size="mini" prefix-icon="el-icon-search" placeholder="搜索音乐、MV、歌单、用户"></el-input>
             </div>
         </div>
-        <div class="right">
+        <div class="right" v-show="false">
             <el-button @click="minimize" class="no-drag" size="mini" type="text">
                 <i class="btn el-icon-minus"></i>
+            </el-button>
+            <el-button @click="maximize" class="no-drag " size="mini" type="text">
+                <i class="iconfont icon-fangda1"></i>
             </el-button>
             <el-button @click="close" class="no-drag hover-color" size="mini" type="text">
                 <i class="btn el-icon-close"></i>
@@ -35,6 +38,11 @@
                 default: '40px'
             }
         },
+        data(){
+            return{
+                isMax: false
+            }
+        },
         methods: {
             close() {
                 this.$confirm('此操作将退出土狗云音乐, 是否继续?', '提示', {
@@ -49,6 +57,16 @@
             },
             minimize() {
                 this.$electron.ipcRenderer.send('minimize')
+            },
+            maximize:function () {
+                if(this.isMax){
+                    this.isMax = false
+                    this.$electron.ipcRenderer.send('reSize')
+                }else{
+                    this.isMax = true
+                    this.$electron.ipcRenderer.send('maximize')
+                }
+
             },
             back() {
                 if (this.$route.name !== 'music') {

@@ -7,9 +7,9 @@ export default new Router({
     routes: [
         {
             path: '/',
-            name: 'main',
+            name: 'home',
             redirect: { name: 'music' },
-            component: require('@/views/main').default,
+            component: require('@/views/Home').default,
             children: [
                 {
                     path: 'music',
@@ -25,6 +25,11 @@ export default new Router({
         {
             path: '*',
             redirect: '/'
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component:()=>import('../components/Login')
         }
     ]
 })

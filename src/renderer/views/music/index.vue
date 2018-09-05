@@ -1,13 +1,12 @@
 <template>
     <div class="music-index">
         <el-tabs v-model="activeName" @tab-click="handleClick">
-            <el-tab-pane label="精选" name="choiceness"></el-tab-pane>
+            <el-tab-pane label="个性推荐" name="choiceness"></el-tab-pane>
             <el-tab-pane label="歌手" name="singer"></el-tab-pane>
             <el-tab-pane label="排行" name="toplist"></el-tab-pane>
             <el-tab-pane label="电台" name="dj"></el-tab-pane>
-            <el-tab-pane label="分类歌单" name="playlist"></el-tab-pane>
-            <el-tab-pane label="有声" name="ys"></el-tab-pane>
-            <el-tab-pane label="数字专辑" name="szzj"></el-tab-pane>
+            <el-tab-pane label="歌单" name="playlist"></el-tab-pane>
+            <el-tab-pane label="最新音乐" name="newMusic"></el-tab-pane>
         </el-tabs>
         <div class="music-body">
             <transition name="el-fade-in-linear">
@@ -16,6 +15,7 @@
                 <toplist v-if="activeName==='toplist'" />
                 <singer v-if="activeName==='singer'" />
                 <dj v-if="activeName==='dj'" />
+                <newmusic v-if="activeName==='newMusic'" />
             </transition>
         </div>
     </div>
@@ -26,6 +26,7 @@
     import toplist from './toplist'
     import singer from './singer'
     import dj from './dj'
+    import newmusic from './newMusic'
     export default {
         components: {
             choiceness,
@@ -33,6 +34,7 @@
             toplist,
             singer,
             dj,
+            newmusic
         },
         data() {
             return {

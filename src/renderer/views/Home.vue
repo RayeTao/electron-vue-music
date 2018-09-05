@@ -23,6 +23,7 @@
             </el-footer>
         </el-container>
         <login-view />
+    <user-info-view></user-info-view>
     </div>
 </template>
 <script>
@@ -31,6 +32,7 @@
     import FooterView from '../components/Footer/'
     import LoginView from '../components/Login/'
     import Playlist from '../components/Playlist/'
+    import UserInfoView from '../components/UserInfo/'
 
     export default {
         components: {
@@ -38,7 +40,8 @@
             HeaderView,
             FooterView,
             LoginView,
-            Playlist
+            Playlist,
+            UserInfoView
         }
     }
 </script>

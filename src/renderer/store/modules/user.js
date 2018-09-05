@@ -30,6 +30,23 @@ export default {
             locs.set('profile', res.profile)
             commit("SET_USER_DATA", data)
 
+        },
+        SET_LOGINOUT({
+                      commit,
+                      state
+                  }, res) {
+
+            let data = {
+                is_login: false,
+                account: res.account,
+                bindings: res.bindings,
+                profile: res.profile
+            }
+            locs.set('account', res.account)
+            locs.set('bindings', res.bindings)
+            locs.set('profile', res.profile)
+            commit("SET_USER_DATA", data)
+
         }
     }
 }

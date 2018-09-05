@@ -10,26 +10,35 @@
             </el-button>
         </div>
         <div class="font-assist  type-icons">
-            <i class="iconfont icon-LV5"></i>
+            <i class="iconfont icon-LV8" style="color: red"></i>
             <i class="iconfont icon-vip"></i>
         </div>
     </div>
 </template>
 <script>
+    import locs from "../../utils/locs";
+
     export default {
+
         methods: {
             login() {
+                console.log(this.user)
                 if (this.user.is_login) {
+                    this.$bus.$emit('userInfo')
+                    //this.$bus.$emit('login')
 
                 } else {
                     this.$bus.$emit('login')
+
                 }
 
             }
         },
         computed: {
             user() {
+               // console.log(this.$store.state.user)
                 return this.$store.state.user
+                //return locs.get('userInfo')
             }
         }
     }
@@ -43,8 +52,8 @@
         justify-content: center;
         align-items: center;
         .avatar {
-            width: 50px;
-            height: 50px;
+            width: 100px;
+            height: 100px;
             img {
                 width: 100%;
                 height: 100%;

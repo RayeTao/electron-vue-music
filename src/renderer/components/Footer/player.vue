@@ -6,10 +6,10 @@
             </el-button>
             <el-button class="play-btn" type="text" @click="playClick">
                 <i class="iconfont icon-zanting" v-if="!is_play"></i>
-                <i class="iconfont icon-bofang" v-else></i>
+                <i class="iconfont icon-iconset0481" v-else></i>
             </el-button>
             <el-button type="text" @click="playAfter" :disabled="!after_song">
-                <i class="iconfont icon-kuaijin"></i>
+                <i class="iconfont icon-iconset0485"></i>
             </el-button>
         </div>
         <div class="cover">

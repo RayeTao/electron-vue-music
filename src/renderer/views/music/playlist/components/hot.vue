@@ -11,7 +11,7 @@
             <span>精选歌单</span>
         </div>
         <el-row :gutter="15" class="mt-10">
-            <el-col :span="20" v-for="(item,index) in playlists" :key="index">
+            <el-col :span="20" v-for="(item,index) in playlists" :key="index" >
                 <hot-item :item="item" />
             </el-col>
         </el-row>

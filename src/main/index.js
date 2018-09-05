@@ -26,15 +26,14 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         height: 800,
         useContentSize: true,
-        width: 1200,
-        frame: false,
-        resizable: false,
+        width: 1000,
+        frame: true,
+        resizable: true,
         skipTaskbar: false,
         transparent: false,
-        title:"小土狗音乐",
+        title:"音乐",
         autoHideMenuBar:true,
-        x:0,
-        y:0
+        center: true
     });
 
     mainWindow.loadURL(winURL)
@@ -63,6 +62,13 @@ ipcMain.on('close',e=>{
 })
 ipcMain.on('minimize',e=>{
     mainWindow.minimize()
+})
+ipcMain.on('maximize',e=>{
+    mainWindow.maximize()
+})
+ipcMain.on('reSize',e=>{
+    //mainWindow.setSize(800,1000,true)
+    mainWindow.setResizable(true)
 })
 
 /**
